@@ -1,21 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
 import NavBar from'./components/NavBar/NavBar'
+import './App.css'
+import 'bootstrap/dist/css/bootstrap.min.css'
+import ItenListContainer from './components/ItemListContainer/ItenListContainer';
+
+
+
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
         <NavBar />
-        
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-        
-        </a>
-      </header>
+        <ItenListContainer saludo= {'Bienvenidos'}/>
+
+
     </div>
   );
 }

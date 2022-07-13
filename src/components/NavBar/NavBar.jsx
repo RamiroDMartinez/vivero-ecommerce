@@ -1,41 +1,42 @@
 import React from 'react'
+import Button from 'react-bootstrap/Button';
+import Container from 'react-bootstrap/Container';
+import Form from 'react-bootstrap/Form';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import NavDropdown from 'react-bootstrap/NavDropdown';
+import CartWidget from './CartWidget/CartWidget';
 
-const NavBar = () => {
+
+
+const NavBar = ({container}) => {
 return (
-<div>
-<nav class="navbar navbar-expand-lg bg-light">
-<div class="container-fluid">
-    <a class="navbar-brand" href="#">VIVERO</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavDropdown">
-        <ul class="navbar-nav">
-        <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Suculentas</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">Plantas de interior</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">Plantes de exterior</a>
-        </li>
-        <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Jardineria
-            </a>
-        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <li><a class="dropdown-item" href="#">Herramientas</a></li>
-            <li><a class="dropdown-item" href="#">Macetas</a></li>
-            <li><a class="dropdown-item" href="#">Productos</a></li>
-        </ul>
-            </li>
-        </ul>
-    </div>
-    </div>
-</nav>
-</div>
+
+    <Navbar bg="light" expand="lg">
+    <Container fluid>
+        <Navbar.Brand href="#">Vivero Ecommerce</Navbar.Brand>
+        <Navbar.Toggle aria-controls="navbarScroll" />
+        <Navbar.Collapse id="navbarScroll">
+        <Nav
+            className="me-auto my-2 my-lg-0"
+            style={{ maxHeight: '100px' }}
+            navbarScroll
+        >
+            <Nav.Link href="#action1">Suculentas</Nav.Link>
+            <Nav.Link href="#action2">Plantas de interior</Nav.Link>
+            <Nav.Link href="#action3">Plantas de exterior</Nav.Link>
+            <NavDropdown title="Jardineria" id="navbarScrollingDropdown">
+            <NavDropdown.Item href="#action4">Macetas</NavDropdown.Item>
+            <NavDropdown.Item href="#action5">Semillas</NavDropdown.Item>
+            <NavDropdown.Item href="#action6">Herramientas</NavDropdown.Item>
+            <NavDropdown.Item href="#action7">Tierra</NavDropdown.Item>
+            </NavDropdown>
+        </Nav>
+        </Navbar.Collapse>
+        <CartWidget />
+    </Container>
+    </Navbar>
+
 )
 }
-
 export default NavBar
