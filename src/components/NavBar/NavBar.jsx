@@ -25,12 +25,8 @@ return (
             <Nav.Link href="#action1">Suculentas</Nav.Link>
             <Nav.Link href="#action2">Plantas de interior</Nav.Link>
             <Nav.Link href="#action3">Plantas de exterior</Nav.Link>
-            <NavDropdown title="Jardineria" id="navbarScrollingDropdown">
-            <NavDropdown.Item href="#action4">Macetas</NavDropdown.Item>
-            <NavDropdown.Item href="#action5">Semillas</NavDropdown.Item>
-            <NavDropdown.Item href="#action6">Herramientas</NavDropdown.Item>
-            <NavDropdown.Item href="#action7">Tierra</NavDropdown.Item>
-            </NavDropdown>
+            <Nav.Link href="#action4">Jardineria</Nav.Link>
+            
         </Nav>
         </Navbar.Collapse>
         <CartWidget />
