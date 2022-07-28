@@ -9,7 +9,7 @@ import ItemList from "../ItemList/ItemList"
 const ItemListContainer = ({saludo}) => {
     const [ productos, setProductos ] = useState([])
     const [ loading, setLoading] = useState(true)
-    const {categoriaId} = useParams()
+    const { categoriaId } = useParams()
 
     useEffect(()=>{
     if (categoriaId) {
