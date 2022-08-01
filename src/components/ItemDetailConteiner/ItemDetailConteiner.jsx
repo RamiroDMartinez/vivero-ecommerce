@@ -16,7 +16,7 @@ const {detalleId} = useParams()
     
     return (
         <div>
-            ItemDetailContainer
+            
             <ItemDetail producto = {producto}/>
         </div>
     )
