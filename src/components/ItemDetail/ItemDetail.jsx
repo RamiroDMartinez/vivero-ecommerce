@@ -32,3 +32,4 @@ const onAdd = (cant) => {
 }
 
 export default ItemDetail
+

@@ -12,7 +12,7 @@ const {detalleId} = useParams()
     useEffect (() => {
         getFetch (detalleId)
         .then(resp => setProducto(resp))
-    }, [])
+    }, [detalleId])
     
     return (
         <div>
