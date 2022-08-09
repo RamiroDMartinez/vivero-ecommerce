@@ -1,34 +1,49 @@
 import React from 'react'
+import ItemCount from '../ItemCount/ItemCount'
+import { useCartContext } from '../../contex/CartContext'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import ItemCount from '../ItemCount/ItemCount'
-
 
 const ItemDetail = ({producto}) => {
-const [toCart, setToCart] = useState(true)   
+const [isCount, setIsCount] = useState(true)  
+const {agregarCarrito} = useCartContext()
+
 const onAdd = (cant) => {
-    alert(`La cantidad es : ${cant}`)
-    setToCart(false)
+    console.log(`La cantidad es : ${cant}`)
+    agregarCarrito ( {...producto, cantidad: cant})
+    setIsCount(false)
 
 }
 
     return (
         <div className="row">
             <div className="col">
-                <img src={producto.foto} alt="Foto del Producto" />
-            </div>
-            <div className="col">
+                <div className="row">
+                    <div className="col">
+                        <img src={producto.foto} alt="Foto del Producto" />
+                    </div>
+                <div className="col">
                 <h3>{producto.name}</h3>
                 <p>Categoria: {producto.categoria}</p>
-                <p>Precio:{producto.precio}</p>
+                <p>Precio: {producto.precio}</p>
             </div>
-            {toCart ?
+        </div>
+    </div>
+            <div className="col">
+            {isCount ?
             <ItemCount  initial={1} stock={10} onAdd={onAdd} />
-            :
-            <Link to="/cart"><button>Ir Al Carrito</button></Link>
+                    :
+            <>
+            <Link to='/cart'><button className="btn btn-outline-success">Terminar Compra</button></Link>
+            <Link to='/'><button className="btn btn-outline-primary"> Seguir Compra</button></Link>
+            
+            
+            </>
             }
             </div>
+        </div>
     )
+
 }
 
 export default ItemDetail
