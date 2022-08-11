@@ -5,7 +5,6 @@ import ItemCount from "../ItemCount/ItemCount"
 import ItemList from "../ItemList/ItemList"
 
 
-
 const ItemListContainer = ({saludo}) => {
     const [ productos, setProductos ] = useState([])
     const [ loading, setLoading] = useState(true)
