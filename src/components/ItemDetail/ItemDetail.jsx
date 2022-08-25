@@ -1,6 +1,6 @@
 import React from 'react'
 import ItemCount from '../ItemCount/ItemCount'
-import { useCartContext } from '../../contex/CartContext'
+import { useCartContext } from '../contex/CartContex'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 
@@ -9,7 +9,6 @@ const [isCount, setIsCount] = useState(true)
 const {agregarCarrito} = useCartContext()
 
 const onAdd = (cant) => {
-    console.log(`La cantidad es : ${cant}`)
     agregarCarrito ( {...producto, cantidad: cant})
     setIsCount(false)
 
@@ -36,9 +35,8 @@ const onAdd = (cant) => {
             <>
             <Link to='/cart'><button className="btn btn-outline-success">Terminar Compra</button></Link>
             <Link to='/'><button className="btn btn-outline-primary"> Seguir Compra</button></Link>
-            
-            
             </>
+            
             }
             </div>
         </div>

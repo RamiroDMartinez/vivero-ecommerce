@@ -4,7 +4,7 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import CartWidget from './CartWidget/CartWidget';
-import { useCartContext } from '../../contex/CartContext';
+import { useCartContext } from '../contex/CartContex';
 
 
 
@@ -34,7 +34,7 @@ return (
             
         </Nav>
         <Link to='/cart'>
-            { cantidadTotal ()}
+        { cantidadTotal () !== 0 && cantidadTotal ()}
             <CartWidget />
         </Link>
         </Navbar.Collapse>

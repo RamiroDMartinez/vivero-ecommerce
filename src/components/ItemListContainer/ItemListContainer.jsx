@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom"
 import { getFetch } from "../../helpers/getFetch"
 import ItemCount from "../ItemCount/ItemCount"
 import ItemList from "../ItemList/ItemList"
+import Loading from "../Loading/Loading"
 
 
 const ItemListContainer = ({saludo}) => {
@@ -10,7 +11,7 @@ const ItemListContainer = ({saludo}) => {
     const [ loading, setLoading] = useState(true)
     const { categoriaId } = useParams()
 
-    useEffect(()=>{
+    useEffect(() => {
     if (categoriaId) {
         getFetch()
         .then(respuesta => setProductos(respuesta.filter(prod => prod.categoria === categoriaId)))
@@ -34,7 +35,7 @@ return (
         {saludo}
         
         {loading ?
-        <h1> Cargando ...</h1>
+        <Loading />
         :
         <ItemList productos={productos} />
         }
@@ -42,5 +43,9 @@ return (
     </div>
     
 )
-}
+
+
+}   
+
+
 export default ItemListContainer

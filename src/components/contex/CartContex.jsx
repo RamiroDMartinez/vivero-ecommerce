@@ -1,14 +1,10 @@
 import { createContext, useState, useContext } from 'react'
 
 const CartContext = createContext([])
-
 export const useCartContext = () => useContext(CartContext)
-
 const CartContextProvider = ({children}) => {
-    
-    const [cartList, setCartList] = useState([])
-
-    const  agregarCarrito = (prod) => {
+const [cartList, setCartList] = useState([])
+const  agregarCarrito = (prod) => {
         const idx = cartList.findIndex(producto =>producto.id === prod.id)
         if (idx !== -1) {
         let cant = cartList [idx].cantidad

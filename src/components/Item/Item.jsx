@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 
 
 const Item = ({ prod }) => {
+
     return (
         <div            
             className='col-md-4 p-1'
