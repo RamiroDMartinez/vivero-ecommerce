@@ -43,9 +43,6 @@ return (
     </div>
     
 )
-
-
 }   
-
 
 export default ItemListContainer
